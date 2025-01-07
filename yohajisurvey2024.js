@@ -2,7 +2,7 @@ fetch("data/data.tsv")
   .then((res) => res.text())
   .then((text) => {
     
-    data = text.split('\r\n').map(a=>a.split('\t'))
+    data = text.split('\n').map(a=>a.split('\t'))
 
     if ($('body').is('#main')) {
         makeChart(getCounts(1), data[0][1], 'comesfrom', 'doughnut', ['#17b7f2', '#131462', '#7a5ecd'])
