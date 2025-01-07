@@ -1,0 +1,340 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="yohajisurvey2024.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body id="main">
+    <div id="navigation" style="display:none">
+        <a href="#part1">Top</a>
+        <a href="#part2">Overview</a>
+        <a href="#part3">Characters</a>
+        <a href="#part4">Free response</a>
+    </div>
+    <div id="part1">
+        <h1>Yohaji Character Survey 2024</h1>
+        <h2 class="textbox">Survey period: 26 Dec 2024 - 6 Jan 2025</h2>
+        <h2 class="textbox">by <a href="https://youkaigakkou-tl.tumblr.com/">canada</a></h2>
+    </div>
+
+    <!----------------- PART 2  ---------------------------->
+    <div id="part2">
+        <h1>Overview</h1>
+
+        <div class="chartsection">
+            <div class="chart-container">
+                <h3 class="textbox">How did you get to this poll?</h3>
+                <canvas id="comesfrom" style="width:100%;max-width:300px;height:300px"></canvas>
+            </div>
+            <div class="textsection">
+                <div class="textbox">
+                    From 26th Dec, 2024 to 6th Jan, 2025, we got a total of <span id="totalnum" class="em">???</span>
+                    submissions!
+                    <br>
+                    <br>
+                    That's 10 times the 22 people who answered the 2022 poll!
+                </div>
+                <div class="textbox">
+                    Of those, <span id="returning" class="em">???</span> were returning answerers!<br>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="chartsection" style="flex-direction: row-reverse;">
+            <div class="chart-container">
+                <h3 class="textbox">Which one are you?</h3>
+                <canvas id="whichone" style="width:100%;max-width:300px;height:300px"></canvas>
+            </div>
+            <div class="textsection">
+                <div class="textbox">
+                    While the majority were manga readers, there were <span id="which1" class="em">???</span> people who
+                    checked out the manga after seeing the anime, and <span id="which2" class="em">???</span>
+                    anime-onlys!
+                </div>
+                <div class="textbox" style="font-size:0.9em">(Now that I think about it, I don't know how an anime-only
+                    would find one of my accounts 🤔)</div>
+            </div>
+        </div>
+
+        <div class="chartsection">
+            <div class="chart-container">
+                <h3 class="textbox">When did you get into Yohaji?</h3>
+                <canvas id="when" style="width:100%;max-width:350px;height:400px"></canvas>
+            </div>
+            <div class="textsection">
+                <div class="textbox">Over <span class="em">60%</span> of answerers got into Yohaji in 2024!</div>
+                <div class="textbox"><span class="em">3</span> people got into Yohaji way back in 2017, back when (or
+                    even before) Yen Press published the first volume in English!</div>
+                <div class="textbox" style="font-size:0.9em">(It was published December 2017, so I figured there
+                    wouldn't be enough people to warrant a dedicated checkbox for that year.)</div>
+            </div>
+        </div>
+
+        <div class="chartsection" style="margin-top:1em;">            
+            <div class="chart-container">
+                <h3 class="textbox">What got you interested?</h3>
+                <canvas id="why" style="width:100%;max-width:350px;height:400px"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3 class="textbox">If you mentioned "character"...</h3>
+                <canvas id="why-character" style="width:100%;max-width:250px;height:300px"></canvas>
+            </div>
+        </div>
+        <div class="textsection" style="flex-flow:row wrap;justify-content: center;">
+            <div class="textbox">
+                As expected, the characters, supernatural theme and anime existing are what got a lot of people
+                interested.
+                <br>
+                <br>
+                Shoutout to the 3 people who got into it because of me?! (My tumblr, this <a
+                    href="https://youkaigakkou-tl.tumblr.com/post/711266182091735040/ebisu-fight-using-my-power-this-blog-for-good">Ebisu
+                    poll</a> and my <a
+                    href="https://mxj.myanimelist.net/readthismanga/2023/anime/#comic-card-93416">MAL "You should
+                    read this manga"</a> comment respectively)
+            </div>
+            <div class="textbox">
+                AND ALSO SHOUTOUT TO THIS GUY'S DAD?? WAS NOT AWARE DADS WATCHED ANIME LET ALONE THIS ONE.
+                <br>
+                <br>
+                <img src="thisguysdad.jpg">
+                Say hi to ur dad for me thx
+            </div>
+        </div>
+        <div class="textsection" style="margin-bottom:2em;">
+            <div class="textbox" style="max-width:unset">
+                Also, we got <span class="em">3</span> responses in Japanese, and <span class="em">8</span> people
+                mentioned
+                English not being their first language!
+                <br>
+                I'm so happy this survey managed to reach so far 💜
+            </div>
+        </div>
+
+    </div>
+    <!----------------- PART 3  ---------------------------->
+    <div id="part3">
+        <div class="part3header">
+            <h1>Characters</h1>
+            <h3>AKA the entire point of this survey</h3>
+        </div>
+        <div class="chartsection">
+            <div class="chart-container">
+                <h3 class="textbox">Top 1 favorite & 3 other favorites</h3>
+                <canvas id="top4fav" style="width:100%;max-width:600px;height:1000px"></canvas>
+            </div>
+            <div class="textsection" id="characterchart-text">
+                <div class="textbox">
+                    Once again, <span class="em">Haruaki</span> sweeps, getting <span class="em">37%</span> of the
+                    votes!
+                    <br><br>
+
+                    <span class="em">Dr. Takahashi</span> moves up to 2nd place from only getting 1 out of 22 votes last
+                    time! Being a manwhore truly does wonders 😌
+                    <br>
+                    <br>
+                    <span class="em">Rintarou</span>, while losing to Takahashi as a "no. 1" pick, beats him and nearly
+                    ties with Haruaki as a "other 3 faves" pick!
+                    <br>
+                    <br>
+                    And rounding out 4th and 5th place are the <span class="em">Principal</span> and <span
+                        class="em">Sano</span>, who are only 2 votes apart.
+                    <div class="hide-handle"></div>
+                    <div class="chibis">
+                        <img src="images/chibi1.png" id="chibi1">
+                        <img src="images/chibi2.png" id="chibi2">
+                        <img src="images/chibi3.png" id="chibi3">
+                        <img src="images/chibi4.png" id="chibi4">
+                        <img src="images/chibi5.png" id="chibi5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="textsection">
+            <div class="textbox" style="max-width:800px">
+                <span class="em">Mame</span> and <span class="em">Hatanaka</span>, while not many people's first choice,
+                are in a lot of people's "top 4" picks! Quite in-character for them.
+                <br>
+                <br>
+                <span class="em">Kai</span> and <span class="em">Seiryuu</span> are tied for first among the characters
+                who weren't anyone's "no. 1", but were in their "other 3 faves".
+                <br>
+                <br>
+                <span class="em">Nyuudou</span>, who got 2nd place with 3 votes in the 2022 poll, got the same amount of
+                votes this time, but unfortunately that only puts him at tied for 11th.
+            </div>
+        </div>
+
+        <div class="chartsection">
+            <div class="chart-container">
+                <h3 class="textbox">Initial favorites</h3>
+                <canvas id="ogfavs" style="width:100%;max-width:600px;height:600px"></canvas>
+            </div>
+            <div class="textsection">
+                <div class="textbox">
+                    <span class="em">Sano</span> and <span class="em">Rintarou</span> really stand out as characters
+                    that drew people in initially, but then people left for more yaoiful characters 😔
+                    <br>
+                    <br>
+                    Sano and Rintarou we gotta get your stocks up!! C'mon Sano drop that backstory!! Rintarou you...
+                    uh... go get Haruaki killed again! People love that! (I'm people 😋) (actually this can apply to
+                    both of you!)
+                    <br>
+                    <br>
+                    Also, interestingly, <span class="em">Mame</span> is unexpectedly high on this list!
+
+                </div>
+            </div>
+        </div>
+        <div class="chartsection">
+            <div class="chart-container">
+                <h3 class="textbox">Favorite dynamics</h3>
+                <canvas id="dynamics" style="width:100%;max-width:600px;height:700px"></canvas>
+            </div>
+            <div class="textsection">
+                <div class="textbox">
+                    It's surprising that teacher trio is the top and not gakutai! And also that gakutai and mikiharu are as close as they are.
+                    <br>
+                    <br>
+                    I didn't include the ones that were "all of class 2-3" because... come on man... that's 25 people...
+                    <br>
+                    <br>
+                    Also had to cut out all the ones with only 1 vote because otherwise this chart would be twice as long, so here's some highlights:
+                    <br>
+                    <ul>
+                        <li>Me x Haruaki</li>
+                        <li>Seimei/Haruaki/Evil!Haruaki</li>
+                        <li>Haruaki bicycle (?? what does this mean)</li>
+                        <li>Seimei x sailor uniforms</li>
+                        <li>Kai & Hatanaka (shocked that only 1 person said this)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h2>Some highlights from the free response questions!</h2>
+        <div class="quotesection">
+            <div class="quote">
+                Suzaku is a total swamp.</div>
+            <div class="textbox">What does this mean?? I mean i agree(?) but what does it mean??? Anon??? I've been
+                thinking about this for days.</div>
+        </div>
+        <div class="quotesection">
+            <div class="quote">
+                (Your other faves? (Around/up to 3))
+                <br><br>
+
+                Worldly desires+athleticism Haruaki, gross-Aki when he sees a sailor uniform, Principal
+            </div>
+            <div class="textbox">I've put down "Worldly desires+athleticism Haruaki" as "Listless Haruaki" on the chart
+                above, gross-aki is just regular Haruaki 👍</div>
+        </div>
+
+        <div class="quotesection">
+            <div class="quote">
+                Guys... Do you think Akira is capable of manifesting eyes on ... certain reproduction organs 😭He said
+                it himself he could grow it on any parts of his body so he definitely did try "that" right????? I
+                apologised *cough*, that was a very vulgar thought. </div>
+            <div class="textbox">No it's true you're onto something here. We need to investigate this for the future of
+                scientific advancement. Do report back if you have any findings.</div>
+        </div>
+
+        <div class="quotesection">
+            <div class="quote">
+                WHAT IF Seimei and Haruaki are the same person?
+                <br><br>
+                Now, I know what you’re thinking “Anon, what the hell? They’re literally the same soul, aka
+                reincarnation.” BUT WAIT—what if Seimei isn’t Haruaki’s past life, but actually his future self?
+                <br><br>
+                “Anon, what the fu-”
+                <br><br>
+                LET ME FINISH. Okay, maybe I’ve consumed too much Pixiv and AO3 fanfiction lately, but hear me out.
+                Remember when Ranmaru found Seimei sleeping with that cat youkai? What if that moment triggered
+                something in Seimei, a memory of Tamao (Tamao is in his top 10 most precious people, trust me guys). And
+                what if Seimei’s connection to Haruaki isn’t just about reincarnation, but about some future
+                catastrophe?
+                <br><br>
+                Imagine this, Haruaki somehow messes up big-time or gets caught up in some divine chaos and ends up
+                stranded in the Heian era ALONE. He’s forced to survive and adapt to this ancient world, completely
+                isolated. Then, one day, he meets a young Ashiya, and the first thing he does is cry because the weight
+                of everything he’s lost (and everything he’s yet to gain) hits him all at once.
+                <br><br>
+                And THEN BOOM parallels! Just like when Ashiya met Haruaki for the first time and cried, the same thing
+                happens when Seimei meets young Ashiya. It’s a full circle moment of heartbreak and connection.
+                <br><br>
+                …Okay, so maybe I’m not just cooking this theory, I’ve burned the whole kitchen down. Im glad im anon,
+                nobody will call me stupid and judge me or anything heh 😼
+            </div>
+            <div class="textbox">This one's from the longest answer I got for the "Gush about your faves" question, at
+                848 words!
+                <br><br>
+                And this is an idea that's super intriguing to me too! (I love any idea where Seimei is like a
+                fourth-wall-breaking cryptid lmao)
+                <br><br>
+                And also the sentence "Seimei is a future Haruaki who went back to the past" is really funny to say and
+                think about
+                <br><br>
+                --- HYPOTHETICAL ZONE ---
+                <br><br>
+                ...which would also be a kinda fucked up situation to put Haruaki in: If Seimei is a future Haruaki,
+                what happens after he goes back in time to become Seimei? Is there a Haruaki that exists beyond that
+                point? Isn't he stable time loop doomed? Stuck living this span of time forever?
+                <br><br>
+                --- END OF HYPOTHETICAL ZONE ---
+                <br><br>
+                Anyway it's a fun idea haha!! lol!!
+            </div>
+        </div>
+    </div>
+    <!----------------- PART 4  ---------------------------->
+    <div id="part4">
+        <h1>What did you have to say?</h1>
+        <p>
+            Aha! This was my true intent all along! To harvest all the nice things you have to say about your favorite characters! 
+            <br>
+            <br>
+            Now everyone will see what nice things you have to say and you'll see what nice things other people say about your faves!
+            <br>
+            <br>
+        </p>
+        <div class="bigbuttons">
+            <a href="talkabtfavs.html">"Gush about your faves here!"</a>
+            <a href="nicemessages.html">"Anything else you want to say?"</a>
+        </div>
+        <p>
+            <br>
+            <br>
+            ...All put together like these, aren't these almost like new year's wishes?
+            <br>
+            <br>
+            As a thank you for all your submissions, you get to pull an omikuji!
+            <br>
+            Go on!
+        </p>
+        <img src="images/omikuji.png" id="omikuji">
+    </div>
+    <div id="about" class="hide modal">
+        <div class="about-container">
+            <div class="modal-bg"></div>
+            <div class="about-modal">
+                <p>
+                    made by <a href="https://youkaigakkou-tl.tumblr.com/">canada</a>
+                    <br>
+                    original survey <a href="https://youkaigakkou-tl.tumblr.com/post/770902899704430592/yohaji-survey-2024">here</a>
+                    <br>
+                    site made with vanilla html and js
+                </p>
+                <img src="images/tsuru.png" class="tsuruimg">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span id="aboutlink">About</span>
+    </footer>
+</body>
