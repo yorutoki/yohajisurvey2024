@@ -1,4 +1,4 @@
-fetch("data.tsv")
+fetch("data/data.tsv")
   .then((res) => res.text())
   .then((text) => {
     
@@ -14,8 +14,6 @@ fetch("data.tsv")
         makeChart(getCounts(20, true), data[0][4], 'dynamics', 'bar')
 
         characterChart()
-
-        console.log(getCounts(20,true))
 
         returnanswerer = getCounts(10)[1][1]
         whichone = getCounts(2)
