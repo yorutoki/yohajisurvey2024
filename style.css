@@ -260,9 +260,6 @@ h2.textbox, h3.textbox {
 }
 
 @media (max-width:600px) {
-
-
-
     .part3header {
         font-size:0.9em;
     }
@@ -516,12 +513,13 @@ h2.textbox, h3.textbox {
     transform:rotate(225deg) translate(-5px, 5px);
 }
 
-@media (max-width:600px) {
+@media (max-width:1000px) {
     .button-group {
         font-size:0.8em;
     }
     #back {
         position:relative;
+        margin-bottom:-1em;
     }
 }
 
